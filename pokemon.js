@@ -1,20 +1,20 @@
 
 class Selectors{
   constructor(name){
-    this.elHP= document.getElementById(`health-${name}`),
-    this.img= document.getElementById(`img-${name}`),
-    this.elProgressbar= document.getElementById(`progressbar-${name}`)
-    this.health = document.querySelector(`.health-${name}`)
+    this.elHP= document.getElementById(`health-${name}`);
+    this.img= document.getElementById(`img-${name}`);
+    this.elProgressbar= document.getElementById(`progressbar-${name}`);
+    this.health = document.querySelector(`.health-${name}`);
   }
 }
 class Pokemon extends Selectors{
    constructor({name, hp, type, selectors, attacks}){
-     super(selectors)
-    this.name=name
+     super(selectors);
+    this.name=name;
     this.hp={
       current:hp,
       total:hp,
-    }
+    };
     this.type= type;
     this.attacks=attacks;
 
@@ -30,23 +30,23 @@ changeHP=(count, cb)=>{
      // $btn.disabled = true;
       
     } 
-    this.renderHP()
+    this.renderHP();
     cb &&cb(count)
-}
+};
 
   renderHP=()=>{
     this.renderHPLife();
     this.renderProgressbarHP();
-  }
+  };
   renderHPLife=()=>{
-    const{elHP, hp:{current, total}}=this
+    const{elHP, hp:{current, total}}=this;
     elHP.innerText=current+ '/'+ total
     //this.elHP.innerText = this.damageHP + '/' + this.defaultHP;
-}
+};
 renderProgressbarHP=()=>{
   
-  const{elProgressbar, hp:{current,total}}=this
-  let playerHP=current/total*100
+  const{elProgressbar, hp:{current,total}}=this;
+  let playerHP=current/total*100;
   elProgressbar.style.width = current/total*100 + '%';
   if(playerHP<60 && playerHP>20){
     this.health.classList.add('low')

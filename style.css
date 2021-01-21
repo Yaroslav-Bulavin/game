@@ -35,13 +35,14 @@ body {
 }
 
 .control {
-    width: 320px;
-    height: 260px;
-    position: relative;
-    margin: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 20px;
+    width: 70%;
+    justify-content: space-around;
+    
+}
+.left, .right{
+    display: block;
 }
 
 .playground {
@@ -266,7 +267,8 @@ body {
 }
 
 .button {
-    position: relative;
+    margin-top:20px;
+    display: block;
     background: white;
     border: 2px solid #ffc55b;
     border-radius: 10px;
@@ -280,7 +282,7 @@ body {
 }
 .button:after {
     content: "";
-    position: absolute;
+    
     left: -5px;
     right: -5px;
     top: -5px;
